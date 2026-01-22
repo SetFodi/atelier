@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { useState, useEffect } from "react";
 import ModernVisual from "./components/ModernVisual";
+import FeaturedWork from "./components/FeaturedWork";
 
 export default function Home() {
   const [scrolled, setScrolled] = useState(false);
@@ -131,10 +132,10 @@ export default function Home() {
         </div>
 
         {/* Content */}
-        <div className="relative z-10 w-full max-w-[1600px] mx-auto px-8 md:px-16 lg:px-24 pt-32 md:pt-0">
-          <div className="grid lg:grid-cols-12 gap-12 items-center">
+        <div className="relative z-10 w-full max-w-[1400px] mx-auto pt-32 md:pt-0">
+          <div className="grid lg:grid-cols-12 gap-8 lg:gap-16 items-center px-12 md:px-20 lg:px-28">
             {/* Left Content */}
-            <div className="lg:col-span-7 flex flex-col items-start text-left pl-2 md:pl-6 lg:pl-12">
+            <div className="lg:col-span-7 flex flex-col items-start text-left">
               <div className="flex items-center gap-4 mb-8 animate-fade-up">
                 <span className="h-[1px] w-12 bg-[#b8956b]" />
                 <span className="text-[#b8956b] tracking-[0.2em] text-sm uppercase">Architecture & Interior Design</span>
@@ -153,22 +154,33 @@ export default function Home() {
                 that transcend the ordinary and redefine luxury living.
               </p>
 
-              <div className="flex flex-wrap gap-6 animate-fade-up delay-500">
-                <a href="#work" className="group relative px-8 py-4 bg-white text-black overflow-hidden rounded-full transition-all hover:scale-105">
-                  <span className="relative z-10 font-medium tracking-wide">Explore Work</span>
-                  <div className="absolute inset-0 bg-[#b8956b] transform scale-x-0 origin-left transition-transform duration-500 group-hover:scale-x-100" />
-                  <span className="absolute inset-0 z-10 flex items-center justify-center text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">Explore Work</span>
+              <div className="flex flex-wrap gap-5 animate-fade-up delay-500">
+                {/* Primary Button - Explore Work */}
+                <a
+                  href="#work"
+                  className="group inline-flex items-center gap-3 px-8 py-4 bg-[#b8956b] hover:bg-[#d4b896] text-[#090909] font-medium text-sm tracking-[0.05em] transition-all duration-300 hover:shadow-lg hover:shadow-[#b8956b]/25"
+                >
+                  <span>Explore Work</span>
+                  <svg className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                  </svg>
                 </a>
 
-                <a href="#studio" className="group px-8 py-4 border border-white/20 rounded-full hover:bg-white/5 transition-all text-white flex items-center gap-3">
-                  <span className="tracking-wide">Our Story</span>
-                  <span className="group-hover:translate-x-1 transition-transform duration-300">→</span>
+                {/* Secondary Button - Our Story */}
+                <a
+                  href="#studio"
+                  className="group inline-flex items-center gap-3 px-8 py-4 bg-white/5 hover:bg-white/10 backdrop-blur-sm border border-white/20 hover:border-white/40 text-white font-medium text-sm tracking-[0.05em] transition-all duration-300"
+                >
+                  <span>Our Story</span>
+                  <svg className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                  </svg>
                 </a>
               </div>
             </div>
 
             {/* Right Content - Modern Visual */}
-            <div className="lg:col-span-5 hidden lg:block animate-fade-in delay-700">
+            <div className="lg:col-span-5 hidden lg:flex justify-center animate-fade-in delay-700 pr-4">
               <ModernVisual />
             </div>
           </div>
@@ -207,95 +219,7 @@ export default function Home() {
       </section>
 
       {/* Featured Work */}
-      <section id="work" className="py-32 md:py-40 lg:py-48">
-        <div className="max-w-[1600px] mx-auto px-8 md:px-16 lg:px-24">
-          {/* Header */}
-          <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8 mb-20">
-            <div>
-              <div className="section-label mb-6">Selected Projects</div>
-              <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl font-light tracking-[-0.02em]">
-                Featured Work
-              </h2>
-            </div>
-            <a href="#" className="btn-ghost self-start lg:self-auto">
-              View All
-              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-              </svg>
-            </a>
-          </div>
-
-          {/* Projects Grid */}
-          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12">
-            {[
-              {
-                title: "The Glass House",
-                category: "Private Residence",
-                location: "Malibu, CA",
-                image: "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=900&q=85",
-                size: "large"
-              },
-              {
-                title: "Urban Loft",
-                category: "Interior Design",
-                location: "New York, NY",
-                image: "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=900&q=85",
-                size: "small"
-              },
-              {
-                title: "Minimal Living",
-                category: "Private Residence",
-                location: "Tokyo, JP",
-                image: "https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=900&q=85",
-                size: "small"
-              },
-              {
-                title: "Nordic Retreat",
-                category: "Hospitality",
-                location: "Oslo, NO",
-                image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=900&q=85",
-                size: "large"
-              },
-            ].map((project, index) => (
-              <div
-                key={index}
-                className={`group cursor-pointer ${project.size === "large" ? "lg:row-span-2" : ""}`}
-              >
-                <div className={`relative img-zoom mb-6 ${project.size === "large" ? "aspect-[3/4]" : "aspect-[4/3]"}`}>
-                  <Image
-                    src={project.image}
-                    alt={project.title}
-                    fill
-                    className="object-cover"
-                  />
-                  <div className="absolute inset-0 bg-[#090909]/0 group-hover:bg-[#090909]/20 transition-all duration-700" />
-
-                  {/* Hover overlay */}
-                  <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-500">
-                    <div className="w-20 h-20 rounded-full border border-white/30 flex items-center justify-center backdrop-blur-sm">
-                      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M7 17L17 7M17 7H7M17 7V17" />
-                      </svg>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="flex items-start justify-between">
-                  <div>
-                    <p className="text-[0.6875rem] tracking-[0.2em] text-[#b8956b] uppercase mb-2">
-                      {project.category}
-                    </p>
-                    <h3 className="font-serif text-2xl md:text-3xl font-light group-hover:text-[#b8956b] transition-colors duration-500">
-                      {project.title}
-                    </h3>
-                  </div>
-                  <span className="text-[0.75rem] text-[#525252]">{project.location}</span>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <FeaturedWork />
 
       {/* About / Philosophy */}
       <section id="studio" className="py-32 md:py-40 lg:py-48 bg-[#0d0d0d]">

@@ -35,11 +35,11 @@ export default function ModernVisual() {
     const project = projects[activeProject];
 
     return (
-        <div className="relative w-full h-[540px] flex items-center justify-end">
+        <div className="relative w-full h-[480px] flex items-center justify-center">
             {/* Floating Geometric Shapes */}
-            <div className="absolute -top-8 right-20 w-24 h-24 border border-[#b8956b]/20 rotate-45 animate-pulse" />
-            <div className="absolute top-32 -right-4 w-16 h-16 border border-white/10 rounded-full" />
-            <div className="absolute bottom-20 right-1/2 w-3 h-3 bg-[#b8956b] rounded-full blur-[1px]" />
+            <div className="absolute -top-4 right-16 w-20 h-20 border border-[#b8956b]/20 rotate-45 animate-pulse" />
+            <div className="absolute top-28 -right-2 w-14 h-14 border border-white/10 rounded-full" />
+            <div className="absolute bottom-24 left-8 w-3 h-3 bg-[#b8956b] rounded-full blur-[1px]" />
 
             {/* Main Card Container */}
             <div className="relative group">
@@ -47,9 +47,9 @@ export default function ModernVisual() {
                 <div className="absolute -inset-4 bg-gradient-to-br from-[#b8956b]/20 via-transparent to-[#b8956b]/10 blur-3xl opacity-50 group-hover:opacity-70 transition-opacity duration-700" />
 
                 {/* Card */}
-                <div className="relative w-[380px] overflow-hidden rounded-2xl bg-gradient-to-br from-white/[0.08] to-white/[0.02] backdrop-blur-xl border border-white/[0.08] shadow-2xl">
+                <div className="relative w-[340px] overflow-hidden rounded-2xl bg-gradient-to-br from-white/[0.08] to-white/[0.02] backdrop-blur-xl border border-white/[0.08] shadow-2xl">
                     {/* Image Section */}
-                    <div className="relative h-[280px] overflow-hidden">
+                    <div className="relative h-[240px] overflow-hidden">
                         <Image
                             src={project.image}
                             alt={project.name}
@@ -124,8 +124,6 @@ export default function ModernVisual() {
                 </div>
             </div>
 
-            {/* Decorative Line */}
-            <div className="absolute bottom-0 right-0 w-[1px] h-32 bg-gradient-to-t from-[#b8956b]/50 to-transparent" />
         </div>
     );
 }

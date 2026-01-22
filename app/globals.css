@@ -268,3 +268,121 @@ body {
   height: 1px;
   background: var(--accent);
 }
+
+/* Featured Work - Editorial List Style */
+.project-list {
+  position: relative;
+}
+
+.project-row {
+  display: grid;
+  grid-template-columns: auto 1fr auto auto;
+  align-items: baseline;
+  gap: 2rem;
+  padding: 2rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.project-row:first-child {
+  border-top: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.project-row:hover {
+  padding-left: 1.5rem;
+  background: rgba(255, 255, 255, 0.01);
+}
+
+.project-row:hover .project-title {
+  color: var(--accent);
+}
+
+.project-row:hover .project-arrow {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.project-index {
+  font-size: 0.65rem;
+  letter-spacing: 0.15em;
+  color: rgba(255, 255, 255, 0.25);
+  font-variant-numeric: tabular-nums;
+  min-width: 2rem;
+}
+
+.project-title {
+  font-family: var(--font-serif);
+  font-size: clamp(1.5rem, 3vw, 2.5rem);
+  font-weight: 300;
+  letter-spacing: -0.01em;
+  color: var(--text-primary);
+  transition: color 0.4s ease;
+}
+
+.project-meta {
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.3);
+  text-align: right;
+  min-width: 120px;
+}
+
+.project-arrow {
+  width: 2rem;
+  height: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transform: translateX(-0.5rem);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  color: var(--accent);
+}
+
+/* Hover Image Preview */
+.project-preview {
+  position: fixed;
+  width: 400px;
+  height: 280px;
+  pointer-events: none;
+  z-index: 100;
+  opacity: 0;
+  transform: scale(0.95);
+  transition: opacity 0.4s ease, transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  overflow: hidden;
+  box-shadow: 0 25px 80px -20px rgba(0, 0, 0, 0.5);
+}
+
+.project-preview.active {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.project-preview img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@media (max-width: 768px) {
+  .project-row {
+    grid-template-columns: auto 1fr auto;
+    gap: 1rem;
+    padding: 1.5rem 0;
+  }
+
+  .project-meta {
+    display: none;
+  }
+
+  .project-arrow {
+    opacity: 0.5;
+    transform: translateX(0);
+  }
+
+  .project-preview {
+    display: none;
+  }
+}
